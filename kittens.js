@@ -1,4 +1,4 @@
-var kittens = [
+exports.kittens = [
   {
     "url": "https://www.flickr.com/photos/golf_pictures/3017331832",
     "title": "Fat Cat Moe by Dan Perry, on Flickr",

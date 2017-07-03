@@ -1,20 +1,26 @@
-(function (win, doc) {
-    image = doc.getElementById('catpic');
-    doc.getElementById('putakitteninme').appendChild(image);
+var $ = require('jquery');
+require('./analytics.js');
+require('./kittens.scss');
+var list = require('./kittens.js');
 
-    newcat = (function () {
-      var kitten = kittens[Math.floor(Math.random() * kittens.length)];
-      image.alt       = kitten.imageAlt;
-      image.src       = kitten.imageUrl;
-      image.title     = kitten.imageAlt;
+$(document).ready(function(){
 
-      doc.getElementById('title').innerHTML = kitten.title;
-      doc.getElementById('title-link').href = kitten.url;
-      doc.getElementById('description').innerHTML = kitten.description;
+  var image = $('#catpic');
+
+  function newcat () {
+    var kitten = list.kittens[Math.floor(Math.random() * list.kittens.length)];
+    image.attr("alt", kitten.imageAlt );
+    image.attr("src", kitten.imageUrl );
+    image.attr('title', kitten.imageAlt );
+    image.on('load', function () {
+      $('#title').text(kitten.title);
+      $('#title-link').attr("href", kitten.url);
+      $('#description').text( kitten.description);
     });
+  }
 
-    doc.getElementById('putakitteninme').addEventListener("click", newcat);
+  $('#putakitteninme').click(newcat);
 
-    newcat();
+  newcat();
 
-}(this, document));
+});
