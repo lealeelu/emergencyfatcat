@@ -7,8 +7,21 @@ body, input {
     font: 14px/1.4 Helvetica, sans-serif;
 }
 
+h3 {
+  font-family: 'Itim', cursive;
+  font-size: 25px;
+  margin: 25px 10px 0 10px;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-left: 5em;
+  margin-right: 5em
+}
+
 a {
-    color: blue;
+    color: #375e97;
     text-decoration: none;
 }
 
@@ -16,9 +29,24 @@ a:hover { text-decoration: underline; }
 
 .centered { text-align: center; }
 
-.kitten-image {
-    min-height: 600px;
+#catpic {
+  padding: 20px;
 }
+
+#putakitteninme {
+  display: inline-flex;
+  box-shadow: 0 4px 8px 0 #fb6542, 0 6px 15px 0 #fb6542;
+}
+
+#putakitteninme:hover {
+  box-shadow: 0 4px 16px 0 #fb6542, 0 6px 20px 0 #fb6542;
+}
+/* other colors to use
+#fb6542 orange
+#ffbb00 yellow
+#3f681c green
+*/
+
 
 .license {
     color: #afafaf;
